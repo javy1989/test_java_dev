@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: ms-channel
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:local}
+  cloud:
+    config:
+      enabled: ${SPRING_CLOUD_CONFIG_ENABLED:false}
+      fail-fast: true
+      uri: ${SPRING_CLOUD_CONFIG_URI}
+
+
+health:
+  config:
+    enabled: false
