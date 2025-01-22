@@ -49,4 +49,12 @@ public interface IClientService {
      * @param id the id client
      */
     void delete(Long id);
+
+    /**
+     * Get custom data client
+     *
+     * @param id the id client
+     * @return data client
+     */
+    String getCustomDataClient(Long id);
 }

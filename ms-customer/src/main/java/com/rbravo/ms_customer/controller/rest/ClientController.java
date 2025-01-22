@@ -83,4 +83,9 @@ public class ClientController {
     public void delete(@PathVariable Long clientId) {
         clientService.delete(clientId);
     }
+
+    @GetMapping("/fallback")
+    public ResponseEntity<String> retry() {
+        return ResponseEntity.ok(clientService.getCustomDataClient(1L));
+    }
 }
