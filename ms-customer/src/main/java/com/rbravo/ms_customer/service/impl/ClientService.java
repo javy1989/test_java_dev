@@ -8,6 +8,7 @@ import com.rbravo.ms_customer.model.dto.ClientUpdateDTO;
 import com.rbravo.ms_customer.model.entity.Client;
 import com.rbravo.ms_customer.repository.IClientRepository;
 import com.rbravo.ms_customer.service.IClientService;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -65,5 +66,15 @@ public class ClientService implements IClientService {
     public void delete(Long id) {
         findById(id);
         repository.deleteById(id);
+    }
+
+    @Override
+    @CircuitBreaker(name = "customerService", fallbackMethod = "fallBackForCustomerDataClient")
+    public String getCustomDataClient(Long id) {
+        throw new RuntimeException("Simulating failure");
+    }
+
+    private String fallBackForCustomerDataClient(Long id, Throwable ex) {
+        return "Fallback response for client: " + id;
     }
 }
