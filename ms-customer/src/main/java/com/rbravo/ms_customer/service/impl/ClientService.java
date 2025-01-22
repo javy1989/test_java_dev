@@ -1,39 +1,34 @@
 package com.rbravo.ms_customer.service.impl;
 
 import com.rbravo.ms_customer.mapper.ClientMapper;
-import com.rbravo.ms_customer.model.dto.ClientEvent;
+import com.rbravo.ms_customer.messaging.producer.ClientCreateProducer;
 import com.rbravo.ms_customer.model.dto.ClientRequestDTO;
 import com.rbravo.ms_customer.model.dto.ClientResponseDTO;
 import com.rbravo.ms_customer.model.dto.ClientUpdateDTO;
 import com.rbravo.ms_customer.model.entity.Client;
 import com.rbravo.ms_customer.repository.IClientRepository;
 import com.rbravo.ms_customer.service.IClientService;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Class for a client's transactions
+ */
 @Service
 public class ClientService implements IClientService {
 
-    @Value("${app.rabbit.client.exchange}")
-    private String clientExchange;
-
-    @Value("${app.rabbit.client.created-routing-key}")
-    private String clientCreatedRoutingKey;
-
     private final IClientRepository repository;
     private final ClientMapper mapper;
-    private final RabbitTemplate rabbitTemplate;
+    private final ClientCreateProducer clientCreateProducer;
 
     @Autowired
-    public ClientService(IClientRepository repository, ClientMapper mapper, RabbitTemplate rabbitTemplate) {
+    public ClientService(IClientRepository repository, ClientMapper mapper, ClientCreateProducer clientCreateProducer) {
         this.repository = repository;
         this.mapper = mapper;
-        this.rabbitTemplate = rabbitTemplate;
+        this.clientCreateProducer = clientCreateProducer;
     }
 
     @Override
@@ -44,10 +39,7 @@ public class ClientService implements IClientService {
         }
         Client client = mapper.toEntity(clientRequestDTO);
         Client savedCliente = repository.save(client);
-        ClientEvent event = new ClientEvent();
-        event.setClientId(savedCliente.getId());
-        event.setIdentification(savedCliente.getIdentification());
-        rabbitTemplate.convertAndSend(clientExchange, clientCreatedRoutingKey, event);
+        clientCreateProducer.sendClientCreateMessage(savedCliente.getId(), savedCliente.getIdentification());
         return mapper.toDTO(savedCliente);
     }
 

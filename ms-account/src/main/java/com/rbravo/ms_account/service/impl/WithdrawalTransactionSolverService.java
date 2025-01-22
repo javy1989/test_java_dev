@@ -7,19 +7,22 @@ import com.rbravo.ms_account.model.enums.TransactionTypeEnum;
 import com.rbravo.ms_account.repository.IAccountRepository;
 import com.rbravo.ms_account.service.IGeneratorTransactionService;
 import com.rbravo.ms_account.service.IProcessorTransactionSolverService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 
+/**
+ * Resolving when it is a withdrawal
+ *
+ * @author rbravo
+ */
 @Service
 public class WithdrawalTransactionSolverService implements IProcessorTransactionSolverService {
 
     private final IAccountRepository accountRepository;
     private final IGeneratorTransactionService generatorTransactionService;
 
-    @Autowired
     public WithdrawalTransactionSolverService(IAccountRepository accountRepository, IGeneratorTransactionService generatorTransactionService) {
         this.accountRepository = accountRepository;
         this.generatorTransactionService = generatorTransactionService;

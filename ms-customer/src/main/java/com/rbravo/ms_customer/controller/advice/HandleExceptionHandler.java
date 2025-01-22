@@ -26,7 +26,6 @@ import java.util.List;
  *
  * @author rbravo
  */
-
 @ControllerAdvice
 public class HandleExceptionHandler extends ResponseEntityExceptionHandler {
 

@@ -5,18 +5,21 @@ import com.rbravo.ms_account.model.entity.Transaction;
 import com.rbravo.ms_account.model.enums.TransactionTypeEnum;
 import com.rbravo.ms_account.repository.ITransactionRepository;
 import com.rbravo.ms_account.service.IGeneratorTransactionService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+/**
+ * Class generate transaction
+ *
+ * @author rbravo
+ */
 @Service
 public class GeneratorTransactionService implements IGeneratorTransactionService {
 
     private final ITransactionRepository transactionRepository;
 
-    @Autowired
     public GeneratorTransactionService(ITransactionRepository transactionRepository) {
         this.transactionRepository = transactionRepository;
     }

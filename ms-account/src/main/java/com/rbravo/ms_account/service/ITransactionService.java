@@ -11,12 +11,27 @@ import java.util.List;
  */
 public interface ITransactionService {
 
+    /**
+     * Create transaction
+     *
+     * @param transaction the payload transaction
+     * @return to {@link TransactionDTO}
+     */
     TransactionDTO create(TransactionDTO transaction);
 
+    /**
+     * Search transaction by id
+     *
+     * @param id the id transaction
+     * @return to {@link TransactionDTO}
+     */
     TransactionDTO findById(Long id);
 
+    /**
+     * Search all transation
+     *
+     * @return to {@link List<TransactionDTO>}
+     */
     List<TransactionDTO> findAll();
-
-    List<TransactionDTO> findByAccountId(Long accountId);
 
 }

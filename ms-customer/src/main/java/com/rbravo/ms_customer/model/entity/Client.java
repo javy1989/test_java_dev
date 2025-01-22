@@ -3,16 +3,15 @@ package com.rbravo.ms_customer.model.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
 
+/**
+ * Represents a client
+ */
 @Entity
 @Table(
         name = "clients",
         schema = "management"
 )
-@Getter
-@Setter
 public class Client extends Person {
 
     /**

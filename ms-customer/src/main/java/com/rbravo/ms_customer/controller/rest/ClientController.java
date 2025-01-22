@@ -5,7 +5,6 @@ import com.rbravo.ms_customer.model.dto.ClientResponseDTO;
 import com.rbravo.ms_customer.model.dto.ClientUpdateDTO;
 import com.rbravo.ms_customer.service.IClientService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,12 +17,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * Controller for client
+ */
 @RestController
 @RequestMapping("/api/v1/clients")
 public class ClientController {
 
-    @Autowired
-    private IClientService clientService;
+    private final IClientService clientService;
+
+    public ClientController(IClientService clientService) {
+        this.clientService = clientService;
+    }
 
     /**
      * Create a new Client.

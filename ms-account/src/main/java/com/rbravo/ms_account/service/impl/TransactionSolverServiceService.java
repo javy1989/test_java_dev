@@ -5,18 +5,21 @@ import com.rbravo.ms_account.model.entity.Transaction;
 import com.rbravo.ms_account.model.enums.TransactionTypeEnum;
 import com.rbravo.ms_account.service.IProcessorTransactionSolverService;
 import com.rbravo.ms_account.service.ITransactionSolverService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 
+/**
+ * Class to resolve the type of transaction being processed
+ *
+ * @author rbravo
+ */
 @Service
 public class TransactionSolverServiceService implements ITransactionSolverService {
 
     private final DepositTransactionSolverService depositSolver;
     private final WithdrawalTransactionSolverService withdrawalTransactionSolver;
 
-    @Autowired
     public TransactionSolverServiceService(DepositTransactionSolverService depositSolver,
                                            WithdrawalTransactionSolverService withdrawalTransactionSolver) {
         this.depositSolver = depositSolver;

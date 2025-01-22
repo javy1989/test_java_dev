@@ -28,7 +28,6 @@ import java.util.List;
  *
  * @author rbravo
  */
-
 @ControllerAdvice
 public class HandleExceptionHandler extends ResponseEntityExceptionHandler {
 
@@ -139,5 +138,4 @@ public class HandleExceptionHandler extends ResponseEntityExceptionHandler {
         ApiError err = new ApiError(LocalDateTime.now(), HttpStatus.BAD_REQUEST, "Error occurred", details);
         return ResponseEntity.badRequest().body(err);
     }
-
 }

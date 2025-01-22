@@ -12,7 +12,6 @@ import java.math.BigDecimal;
  *
  * @author rbravo
  */
-
 public class TransactionDTO {
 
     private Long id;

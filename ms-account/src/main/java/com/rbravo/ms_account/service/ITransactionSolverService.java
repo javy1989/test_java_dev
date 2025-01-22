@@ -13,6 +13,14 @@ import java.math.BigDecimal;
  */
 public interface ITransactionSolverService {
 
+    /**
+     * Solve type transaction
+     *
+     * @param account the account
+     * @param type    the type
+     * @param amount  the amount
+     * @return to {@link Transaction}
+     */
     Transaction solve(Account account, TransactionTypeEnum type, BigDecimal amount);
 
 }

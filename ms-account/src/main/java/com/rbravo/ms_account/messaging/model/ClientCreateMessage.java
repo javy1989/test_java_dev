@@ -1,6 +1,11 @@
-package com.rbravo.ms_customer.model.dto;
+package com.rbravo.ms_account.messaging.model;
 
-public class ClientEvent {
+/**
+ * Represents the information of the created client message
+ *
+ * @author rbravo
+ */
+public class ClientCreateMessage {
 
     private Long clientId;
     private String identification;

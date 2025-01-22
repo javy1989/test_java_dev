@@ -13,11 +13,12 @@ import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.time.LocalDate;
 
+/**
+ * Represents a person
+ */
 @Entity
 @Table(
         name = "persons",
@@ -30,8 +31,6 @@ import java.time.LocalDate;
         }
 )
 @Inheritance(strategy = InheritanceType.JOINED)
-@Getter
-@Setter
 public class Person {
 
     /**

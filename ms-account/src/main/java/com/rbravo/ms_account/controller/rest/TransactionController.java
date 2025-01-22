@@ -3,7 +3,6 @@ package com.rbravo.ms_account.controller.rest;
 import com.rbravo.ms_account.model.dto.TransactionDTO;
 import com.rbravo.ms_account.service.ITransactionService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,8 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/transactions")
 public class TransactionController {
 
-    @Autowired
-    private ITransactionService transactionService;
+    private final ITransactionService transactionService;
+
+    public TransactionController(ITransactionService transactionService) {
+        this.transactionService = transactionService;
+    }
 
     /**
      * Create a new transaction.

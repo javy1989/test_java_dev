@@ -10,12 +10,16 @@ import com.rbravo.ms_account.repository.IAccountRepository;
 import com.rbravo.ms_account.repository.ITransactionRepository;
 import com.rbravo.ms_account.service.ITransactionService;
 import com.rbravo.ms_account.service.ITransactionSolverService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Service a transaction
+ *
+ * @author rbravo
+ */
 @Service
 @Lazy
 public class TransactionService implements ITransactionService {
@@ -25,7 +29,6 @@ public class TransactionService implements ITransactionService {
     private final IAccountRepository accountRepository;
     private final ITransactionSolverService transactionSolver;
 
-    @Autowired
     public TransactionService(TransactionMapper transactionMapper,
                               ITransactionRepository repository,
                               IAccountRepository accountRepository,
@@ -55,10 +58,5 @@ public class TransactionService implements ITransactionService {
     @Override
     public List<TransactionDTO> findAll() {
         return repository.findAll().stream().map(transactionMapper::toDTO).toList();
-    }
-
-    @Override
-    public List<TransactionDTO> findByAccountId(Long accountId) {
-        return repository.findByAccountAndId(accountId).stream().map(transactionMapper::toDTO).toList();
     }
 }

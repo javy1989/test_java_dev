@@ -13,6 +13,15 @@ import java.math.BigDecimal;
  */
 public interface IGeneratorTransactionService {
 
+    /**
+     * Generate a transaction
+     *
+     * @param account the account
+     * @param type    the type transaction
+     * @param amount  the value
+     * @param balance the balance
+     * @return to {@link Transaction}
+     */
     Transaction generateTransaction(Account account, TransactionTypeEnum type, BigDecimal amount, BigDecimal balance);
 
 }

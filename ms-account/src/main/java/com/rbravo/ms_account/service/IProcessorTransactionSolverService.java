@@ -10,6 +10,13 @@ import java.math.BigDecimal;
  */
 public interface IProcessorTransactionSolverService {
 
+    /**
+     * Resolves the transaction
+     *
+     * @param account the account
+     * @param value   the value
+     * @return to {@link Transaction}
+     */
     Transaction solve(Account account, BigDecimal value);
 
 }

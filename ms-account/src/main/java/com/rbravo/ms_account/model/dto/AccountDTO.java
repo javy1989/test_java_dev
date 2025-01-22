@@ -13,7 +13,6 @@ import java.math.BigDecimal;
  *
  * @author rbravo
  */
-
 public class AccountDTO {
 
     private String accountNumber;

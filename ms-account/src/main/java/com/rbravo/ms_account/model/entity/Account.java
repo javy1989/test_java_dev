@@ -10,6 +10,7 @@ import jakarta.persistence.Index;
 import jakarta.persistence.Table;
 
 import java.math.BigDecimal;
+import java.util.Random;
 
 /**
  * Represent account of the client
@@ -95,5 +96,12 @@ public class Account {
 
     public void setClientId(Long clientId) {
         this.clientId = clientId;
+    }
+
+    /**
+     * Generate number account
+     */
+    public void generateAccountNumber() {
+        this.accountNumber = String.format("%06d", new Random().nextInt(1000000));
     }
 }

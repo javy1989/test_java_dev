@@ -6,6 +6,11 @@ import org.springframework.http.HttpStatus;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * Represent information error response
+ *
+ * @author rbravo
+ */
 public class ApiError {
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")

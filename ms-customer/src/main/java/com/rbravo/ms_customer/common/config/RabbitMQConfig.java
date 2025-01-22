@@ -1,6 +1,5 @@
 package com.rbravo.ms_customer.common.config;
 
-import lombok.Data;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.DirectExchange;
@@ -12,8 +11,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Class for rabbitmq configuration
+ *
+ * @author rbravo
+ */
 @Configuration
-@Data
 public class RabbitMQConfig {
 
     @Value("${app.rabbit.client.exchange}")
