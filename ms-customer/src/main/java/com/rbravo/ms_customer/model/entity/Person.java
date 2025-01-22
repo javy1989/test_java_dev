@@ -22,7 +22,7 @@ import java.time.LocalDate;
 @Entity
 @Table(
         name = "persons",
-        schema = "management",
+        schema = "clients",
         indexes = {
                 @Index(name = "person_name_idx", columnList = "name")
         },

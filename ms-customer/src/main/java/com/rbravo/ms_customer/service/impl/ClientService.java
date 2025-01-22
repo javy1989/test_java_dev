@@ -55,7 +55,7 @@ public class ClientService implements IClientService {
 
     @Override
     public ClientResponseDTO update(Long id, ClientUpdateDTO clientUpdateDTO) {
-        Client client = mapper.toEntity(findById(id));
+        Client client = repository.findById(id).orElseThrow(() -> new IllegalStateException("Client not found"));
         mapper.toEntityUpdate(clientUpdateDTO, client);
         Client savedClient = repository.save(client);
         return mapper.toDTO(savedClient);

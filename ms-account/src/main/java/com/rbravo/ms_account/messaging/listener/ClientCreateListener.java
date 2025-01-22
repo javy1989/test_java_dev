@@ -33,6 +33,7 @@ public class ClientCreateListener {
         AccountDTO accountDTO = new AccountDTO();
         accountDTO.setClientId(clientCreateMessage.getClientId());
         accountDTO.setStatus(true);
+        accountDTO.setInitialBalance(BigDecimal.ZERO);
         accountDTO.setBalance(BigDecimal.ZERO);
         accountDTO.setAccountType(AccountTypeEnum.SAVINGS);
         accountService.create(accountDTO);

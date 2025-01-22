@@ -31,6 +31,7 @@ public class AccountService implements IAccountService {
     public AccountDTO create(AccountDTO accountDTO) {
         Account account = accountMapper.toEntity(accountDTO);
         account.generateAccountNumber();
+        account.setBalance(account.getInitialBalance());
         Account savedAccount = repository.save(account);
         return accountMapper.toDTO(savedAccount);
     }

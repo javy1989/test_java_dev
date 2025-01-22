@@ -30,7 +30,7 @@ public interface IClientService {
     /**
      * Search all clients
      *
-     * @return to {@link List<ClientResponseDTO}
+     * @return to {@link List<ClientResponseDTO>}
      */
     List<ClientResponseDTO> findAll();
 

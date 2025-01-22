@@ -23,6 +23,8 @@ public class AccountDTO {
 
     @NotNull(message = "Initial balance is mandatory")
     @DecimalMin(value = "0.0", inclusive = true, message = "Initial balance must be non-negative")
+    private BigDecimal initialBalance;
+
     private BigDecimal balance;
 
     @NotNull(message = "Status is mandatory")
@@ -45,6 +47,14 @@ public class AccountDTO {
 
     public void setAccountType(AccountTypeEnum accountType) {
         this.accountType = accountType;
+    }
+
+    public BigDecimal getInitialBalance() {
+        return initialBalance;
+    }
+
+    public void setInitialBalance(BigDecimal initialBalance) {
+        this.initialBalance = initialBalance;
     }
 
     public BigDecimal getBalance() {

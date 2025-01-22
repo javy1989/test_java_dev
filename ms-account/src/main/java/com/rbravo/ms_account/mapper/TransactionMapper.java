@@ -3,6 +3,7 @@ package com.rbravo.ms_account.mapper;
 import com.rbravo.ms_account.model.dto.TransactionDTO;
 import com.rbravo.ms_account.model.entity.Transaction;
 import org.mapstruct.Mapper;
+import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
 /**
@@ -18,4 +19,6 @@ public interface TransactionMapper {
     Transaction toEntity(Transaction transaction);
 
     TransactionDTO toDTO(Transaction transaction);
+
+    void toEntityUpdate(TransactionDTO transactionDTO, @MappingTarget Transaction transaction);
 }

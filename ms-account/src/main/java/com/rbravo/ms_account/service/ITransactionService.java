@@ -28,10 +28,24 @@ public interface ITransactionService {
     TransactionDTO findById(Long id);
 
     /**
-     * Search all transation
+     * Search all transaction
      *
      * @return to {@link List<TransactionDTO>}
      */
     List<TransactionDTO> findAll();
 
+    /**
+     * Update transaction
+     *
+     * @param transactionDto the transaction
+     * @return to {@link TransactionDTO}
+     */
+    TransactionDTO update(Long id, TransactionDTO transactionDto);
+
+    /**
+     * Delete transaction
+     *
+     * @param transactionId the id
+     */
+    void delete(Long transactionId);
 }

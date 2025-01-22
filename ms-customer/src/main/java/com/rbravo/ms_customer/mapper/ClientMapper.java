@@ -6,6 +6,7 @@ import com.rbravo.ms_customer.model.dto.ClientResponseDTO;
 import com.rbravo.ms_customer.model.dto.ClientUpdateDTO;
 import com.rbravo.ms_customer.model.entity.Client;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
@@ -21,8 +22,7 @@ public interface ClientMapper {
 
     Client toEntity(ClientRequestDTO dto);
 
-    Client toEntity(ClientResponseDTO dto);
-
+    @Mapping(target = "password", ignore = true)
     void toEntityUpdate(ClientUpdateDTO dto, @MappingTarget Client client);
 
     ClientResponseDTO toDTO(Client client);
