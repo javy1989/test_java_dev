@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ms-channel
+    name: ms-customer
   profiles:
     active: ${SPRING_PROFILES_ACTIVE:local}
   cloud:

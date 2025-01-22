@@ -37,7 +37,6 @@ test_neoris/
 - Exposes REST APIs for:
   - Creating accounts for customers.
   - Registering transactions (deposits, withdrawals).
-  - Generating account statements based on date ranges.
 
 ### **3. RabbitMQ Integration**
 - RabbitMQ is used for inter-service communication:
