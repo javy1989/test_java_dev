@@ -35,7 +35,7 @@ public class ClientCreateListener {
         accountDTO.setStatus(true);
         accountDTO.setInitialBalance(BigDecimal.ZERO);
         accountDTO.setBalance(BigDecimal.ZERO);
-        accountDTO.setAccountType(AccountTypeEnum.SAVINGS);
+        accountDTO.setAccountType(AccountTypeEnum.SAVINGS.name());
         accountService.create(accountDTO);
     }
 }

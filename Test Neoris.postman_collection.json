@@ -1,0 +1,701 @@
+{
+	"info": {
+		"_postman_id": "204fe34c-d267-4c5d-b87f-303ea0378781",
+		"name": "Test Neoris",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1479201",
+		"_collection_link": "https://bold-crater-730017.postman.co/workspace/neoris~c92e83ff-4736-4621-bf52-3a892ab3e54e/collection/1479201-204fe34c-d267-4c5d-b87f-303ea0378781?action=share&source=collection_link&creator=1479201"
+	},
+	"item": [
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "Get Clientes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/ms-management/api/v1/clients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ms-management",
+								"api",
+								"v1",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identification\": \"1723231278\",\r\n    \"name\": \"Kevin Bravo\",\r\n    \"gender\": \"M\",\r\n    \"birthdate\": \"17/08/2001\",\r\n    \"address\": \"Guamani Cambio\",\r\n    \"phone\": \"0995561454\",\r\n    \"status\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/ms-management/api/v1/clients/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ms-management",
+								"api",
+								"v1",
+								"clients",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Cliente",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"identification\": \"1234567890\",\r\n    \"name\": \"Marianela Montalvo\",\r\n    \"gender\": \"F\",\r\n    \"birthdate\": \"17/08/1989\",\r\n    \"address\": \"Guamani\",\r\n    \"phone\": \"097548965\",\r\n    \"status\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/ms-account/clientes/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"ms-account",
+										"clientes",
+										"1"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Create Client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identification\": \"1723231278\",\r\n    \"name\": \"Kevin Bravo\",\r\n    \"gender\": \"M\",\r\n    \"birthdate\": \"17/08/2001\",\r\n    \"address\": \"Tumbaco\",\r\n    \"phone\": \"0995561454\",\r\n    \"status\": true,\r\n    \"password\": \"5678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/ms-management/api/v1/clients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ms-management",
+								"api",
+								"v1",
+								"clients"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Client",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"identification\": \"1234567890\",\r\n    \"name\": \"Marianela Montalvo\",\r\n    \"gender\": \"F\",\r\n    \"birthdate\": \"17/08/1994\",\r\n    \"address\": \"Amazonas y NNUU\",\r\n    \"phone\": \"097548965\",\r\n    \"status\": true,\r\n    \"password\": \"1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/ms-management/api/v1/clients",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"ms-management",
+										"api",
+										"v1",
+										"clients"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Delete Client",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ms-management/api/v1/clients/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ms-management",
+								"api",
+								"v1",
+								"clients",
+								"10"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Client",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/ms-management/api/v1/clients/10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"ms-management",
+										"api",
+										"v1",
+										"clients",
+										"10"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ms-management/api/v1/clients/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ms-management",
+								"api",
+								"v1",
+								"clients",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get By Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/ms-management/api/v1/clients/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"ms-management",
+										"api",
+										"v1",
+										"clients",
+										"2"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "transaction",
+					"item": [
+						{
+							"name": "Create Transaction",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"accountNumber\": \"619089\",\r\n    \"amount\" : 8,\r\n    \"transactionType\": \"DEPOSIT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8282/ms-account/api/v1/transactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8282",
+									"path": [
+										"ms-account",
+										"api",
+										"v1",
+										"transactions"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create Transaction",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"accountNumber\": \"619089\",\r\n    \"amount\" : 8,\r\n    \"transactionType\": \"DEPOSIT\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8282/ms-account/api/v1/transactions",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8282",
+											"path": [
+												"ms-account",
+												"api",
+												"v1",
+												"transactions"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "Get All Transaction",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8282/ms-account/api/v1/transactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8282",
+									"path": [
+										"ms-account",
+										"api",
+										"v1",
+										"transactions"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create Transaction",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"accountNumber\": \"619089\",\r\n    \"amount\" : 8,\r\n    \"transactionType\": \"DEPOSIT\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8282/ms-account/api/v1/transactions",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8282",
+											"path": [
+												"ms-account",
+												"api",
+												"v1",
+												"transactions"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "account",
+					"item": [
+						{
+							"name": "Get All Account",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"accountId\": 1,\r\n    \"value\" : 10,\r\n    \"transactionType\": \"WITHDRAWAL\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8282/ms-account/api/v1/accounts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8282",
+									"path": [
+										"ms-account",
+										"api",
+										"v1",
+										"accounts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Accont By Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"accountId\": 1,\r\n    \"value\" : 10,\r\n    \"transactionType\": \"WITHDRAWAL\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8282/ms-account/api/v1/accounts/619089",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8282",
+									"path": [
+										"ms-account",
+										"api",
+										"v1",
+										"accounts",
+										"619089"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Account",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"accountType\" : \"CURRENT\",\r\n    \"status\": true,\r\n    \"initialBalance\": 0,\r\n    \"clientId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8282/ms-account/api/v1/accounts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8282",
+									"path": [
+										"ms-account",
+										"api",
+										"v1",
+										"accounts"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create Account",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"accountType\" : \"CURRENT\",\r\n    \"status\": true,\r\n    \"initialBalance\": 0,\r\n    \"clientId\": 1\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8282/ms-account/api/v1/accounts",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8282",
+											"path": [
+												"ms-account",
+												"api",
+												"v1",
+												"accounts"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "Update Account",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"accountNumber\": \"836875\",\r\n    \"accountType\": \"CURRENT\",\r\n    \"initialBalance\": 0,\r\n    \"balance\": 0,\r\n    \"status\": true,\r\n    \"clientId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8282/ms-account/api/v1/accounts/836875",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8282",
+									"path": [
+										"ms-account",
+										"api",
+										"v1",
+										"accounts",
+										"836875"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create Account",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"accountType\" : \"CURRENT\",\r\n    \"status\": true,\r\n    \"initialBalance\": 0,\r\n    \"clientId\": 1\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8282/ms-account/api/v1/accounts",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8282",
+											"path": [
+												"ms-account",
+												"api",
+												"v1",
+												"accounts"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "Delete Account",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8282/ms-account/api/v1/accounts/836875",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8282",
+									"path": [
+										"ms-account",
+										"api",
+										"v1",
+										"accounts",
+										"836875"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create Account",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"accountType\" : \"CURRENT\",\r\n    \"status\": true,\r\n    \"initialBalance\": 0,\r\n    \"clientId\": 1\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8282/ms-account/api/v1/accounts",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8282",
+											"path": [
+												"ms-account",
+												"api",
+												"v1",
+												"accounts"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

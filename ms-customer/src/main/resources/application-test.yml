@@ -1,0 +1,31 @@
+server:
+  servlet:
+    context-path: /ms-customer
+  port: 8080
+
+spring:
+  sql:
+    init:
+      mode: always
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+app:
+  rabbit:
+    client:
+      exchange: clientExchange
+      created-queue: clientCreateQueue
+      created-routing-key: client.created

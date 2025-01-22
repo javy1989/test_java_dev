@@ -1,0 +1,54 @@
+version: '3.9'
+services:
+  ms-account:
+    build:
+      context: ./ms-account
+      dockerfile: Dockerfile
+    ports:
+      - "8282:8282"
+    environment:
+      SPRING_PROFILES_ACTIVE: prd
+    depends_on:
+      - rabbitmq
+      - postgres
+    networks:
+      - neoris-network
+
+  ms-customer:
+    build:
+      context: ./ms-customer
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: prd
+    depends_on:
+      - rabbitmq
+      - postgres
+    networks:
+      - neoris-network
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - neoris-network
+
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    environment:
+      POSTGRES_USER: neoris_user
+      POSTGRES_PASSWORD: neoris_password
+      POSTGRES_DB: test_neoris
+    ports:
+      - "5432:5432"
+    networks:
+      - neoris-network
+
+networks:
+  neoris-network:
+    driver: bridge

@@ -48,10 +48,11 @@ public class AccountService implements IAccountService {
     }
 
     @Override
-    public AccountDTO update(String number, AccountDTO account) {
-
-        return null;
-
+    public AccountDTO update(String number, AccountDTO accountDTo) {
+        Account account = repository.findById(number).orElseThrow(() -> new AccountNotFoundException("Account not found"));
+        accountMapper.toEntityUpdate(accountDTo, account);
+        Account savedAccount = repository.save(account);
+        return accountMapper.toDTO(savedAccount);
     }
 
     @Override

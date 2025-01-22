@@ -9,9 +9,9 @@ spring:
       repositories:
         enabled: true
   datasource:
-    url: jdbc:postgresql://localhost:5432/test_neoris
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://postgres:5432/test_neoris
+    username: ${DB_USERNAME:neoris_user}
+    password: ${DB_PASSWORD:neoris_password}
     hikari:
       connection-timeout: 30000
       max-lifetime: 1800000
@@ -31,7 +31,7 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
   rabbitmq:
-    host: localhost
+    host: rabbitmq
     port: 5672
     username: guest
     password: guest
