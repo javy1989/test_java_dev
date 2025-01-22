@@ -110,7 +110,7 @@ mvn test
 
 ## Author
 
-- **Name:** [Ricardo Bravo]
-- **Contact:** [ricardoj.bravo@hotmail.com]
+- **Name:** Ricardo Bravo
+- **Contact:** ricardoj.bravo@hotmail.com
 - **Date:** 2025-01-21
 
