@@ -59,4 +59,18 @@ public class TransactionService implements ITransactionService {
     public List<TransactionDTO> findAll() {
         return repository.findAll().stream().map(transactionMapper::toDTO).toList();
     }
+
+    @Override
+    public TransactionDTO update(Long id, TransactionDTO transactionDto) {
+        Transaction transaction = repository.findById(id).orElseThrow(() -> new IllegalStateException("Transaction not found"));
+        transactionMapper.toEntityUpdate(transactionDto, transaction);
+        Transaction savedTransaction = repository.save(transaction);
+        return transactionMapper.toDTO(savedTransaction);
+    }
+
+    @Override
+    public void delete(Long id) {
+        findById(id);
+        repository.deleteById(id);
+    }
 }

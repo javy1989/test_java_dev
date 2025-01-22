@@ -19,10 +19,12 @@ public class AccountDTO {
 
     @NotBlank(message = "Account type is mandatory")
     @Pattern(regexp = "^(SAVINGS|CURRENT)$", message = "Gender must be SAVINGS, CURRENT")
-    private AccountTypeEnum accountType;
+    private String accountType;
 
     @NotNull(message = "Initial balance is mandatory")
     @DecimalMin(value = "0.0", inclusive = true, message = "Initial balance must be non-negative")
+    private BigDecimal initialBalance;
+
     private BigDecimal balance;
 
     @NotNull(message = "Status is mandatory")
@@ -39,12 +41,20 @@ public class AccountDTO {
         this.accountNumber = accountNumber;
     }
 
-    public AccountTypeEnum getAccountType() {
+    public String getAccountType() {
         return accountType;
     }
 
-    public void setAccountType(AccountTypeEnum accountType) {
+    public void setAccountType(String accountType) {
         this.accountType = accountType;
+    }
+
+    public BigDecimal getInitialBalance() {
+        return initialBalance;
+    }
+
+    public void setInitialBalance(BigDecimal initialBalance) {
+        this.initialBalance = initialBalance;
     }
 
     public BigDecimal getBalance() {

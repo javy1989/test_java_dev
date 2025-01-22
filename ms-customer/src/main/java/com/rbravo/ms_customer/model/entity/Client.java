@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(
         name = "clients",
-        schema = "management"
+        schema = "clients"
 )
 public class Client extends Person {
 

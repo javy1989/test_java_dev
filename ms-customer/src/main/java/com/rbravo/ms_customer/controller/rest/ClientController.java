@@ -70,8 +70,8 @@ public class ClientController {
      * @return the updated ClientDTO.
      */
     @PutMapping("/{clientId}")
-    public ClientResponseDTO update(@PathVariable Long clientId, @Valid @RequestBody ClientUpdateDTO payload) {
-        return clientService.update(clientId, payload);
+    public ResponseEntity<ClientResponseDTO> update(@PathVariable Long clientId, @Valid @RequestBody ClientUpdateDTO payload) {
+        return ResponseEntity.ok(clientService.update(clientId, payload));
     }
 
     /**

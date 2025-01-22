@@ -20,7 +20,7 @@ import java.util.Random;
 @Entity
 @Table(
         name = "accounts",
-        schema = "transaction",
+        schema = "accounts",
         indexes = {
                 @Index(name = "account_client_id_idx", columnList = "client_id")
         }
@@ -40,6 +40,12 @@ public class Account {
     @Column(name = "account_type")
     @Enumerated(EnumType.STRING)
     private AccountTypeEnum accountType;
+
+    /**
+     * The balance of the account
+     */
+    @Column(name = "initial_balance")
+    private BigDecimal initialBalance;
 
     /**
      * The balance of the account
@@ -76,6 +82,14 @@ public class Account {
 
     public BigDecimal getBalance() {
         return balance;
+    }
+
+    public BigDecimal getInitialBalance() {
+        return initialBalance;
+    }
+
+    public void setInitialBalance(BigDecimal initialBalance) {
+        this.initialBalance = initialBalance;
     }
 
     public void setBalance(BigDecimal balance) {
