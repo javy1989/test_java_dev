@@ -1,4 +1,4 @@
-CREATE DATABASE test_java_test;
+CREATE DATABASE test_java;
 
 -- CREATE SCHEMA
 CREATE SCHEMA IF NOT EXISTS clients;
