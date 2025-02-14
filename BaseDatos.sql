@@ -1,4 +1,4 @@
-CREATE DATABASE test_neoris;
+CREATE DATABASE test_java_test;
 
 -- CREATE SCHEMA
 CREATE SCHEMA IF NOT EXISTS clients;
