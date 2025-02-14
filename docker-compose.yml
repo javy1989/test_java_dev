@@ -12,7 +12,7 @@ services:
       - rabbitmq
       - postgres
     networks:
-      - neoris-network
+      - java-test-network
 
   ms-customer:
     build:
@@ -26,7 +26,7 @@ services:
       - rabbitmq
       - postgres
     networks:
-      - neoris-network
+      - java-test-network
 
   rabbitmq:
     image: rabbitmq:3-management
@@ -35,20 +35,20 @@ services:
       - "5672:5672"
       - "15672:15672"
     networks:
-      - neoris-network
+      - java-test-network
 
   postgres:
     image: postgres:15
     container_name: postgres
     environment:
-      POSTGRES_USER: neoris_user
-      POSTGRES_PASSWORD: neoris_password
+      POSTGRES_USER: java_test_user
+      POSTGRES_PASSWORD: java_test_password
       POSTGRES_DB: test_neoris
     ports:
       - "5432:5432"
     networks:
-      - neoris-network
+      - java-test-network
 
 networks:
-  neoris-network:
+  java-test-network:
     driver: bridge
