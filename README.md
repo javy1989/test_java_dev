@@ -1,4 +1,4 @@
-# Java Test: Microservices Project
+# Test Neoris: Microservices Project
 
 This repository contains two microservices developed for the technical test:
 - **ms-account**: Manages bank accounts and transactions.

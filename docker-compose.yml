@@ -55,4 +55,14 @@ services:
 
 networks:
   java-network:
+      POSTGRES_USER: java_test_user
+      POSTGRES_PASSWORD: java_test_password
+      POSTGRES_DB: test_java
+    ports:
+      - "5432:5432"
+    networks:
+      - java-network
+
+networks:
+  java-network:
     driver: bridge
