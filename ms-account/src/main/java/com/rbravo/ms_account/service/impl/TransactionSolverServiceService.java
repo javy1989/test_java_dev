@@ -27,14 +27,11 @@ public class TransactionSolverServiceService implements ITransactionSolverServic
     }
 
     private IProcessorTransactionSolverService filterTypeTransaction(TransactionTypeEnum type) {
-        switch (type) {
-            case DEPOSIT:
-                return depositSolver;
-            case WITHDRAWAL:
-                return withdrawalTransactionSolver;
-            default:
-                throw new IllegalArgumentException("Unsupported transaction type");
-        }
+        return switch (type) {
+            case DEPOSIT -> depositSolver;
+            case WITHDRAWAL -> withdrawalTransactionSolver;
+            default -> throw new IllegalArgumentException("Unsupported transaction type");
+        };
     }
 
     @Override
@@ -42,6 +39,4 @@ public class TransactionSolverServiceService implements ITransactionSolverServic
         IProcessorTransactionSolverService solver = filterTypeTransaction(type);
         return solver.solve(account, value);
     }
-
-
 }

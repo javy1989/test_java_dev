@@ -7,12 +7,14 @@ services:
     ports:
       - "8282:8282"
     environment:
-      SPRING_PROFILES_ACTIVE: prd
+      SPRING_PROFILES_ACTIVE: production
+      DB_USERNAME: java_user
+      DB_PASSWORD: java_password
     depends_on:
       - rabbitmq
       - postgres
     networks:
-      - neoris-network
+      - java-network
 
   ms-customer:
     build:
@@ -21,12 +23,14 @@ services:
     ports:
       - "8080:8080"
     environment:
-      SPRING_PROFILES_ACTIVE: prd
+      SPRING_PROFILES_ACTIVE: production
+      DB_USERNAME: java_user
+      DB_PASSWORD: java_password
     depends_on:
       - rabbitmq
       - postgres
     networks:
-      - neoris-network
+      - java-network
 
   rabbitmq:
     image: rabbitmq:3-management
@@ -35,20 +39,20 @@ services:
       - "5672:5672"
       - "15672:15672"
     networks:
-      - neoris-network
+      - java-network
 
   postgres:
     image: postgres:15
     container_name: postgres
     environment:
-      POSTGRES_USER: neoris_user
-      POSTGRES_PASSWORD: neoris_password
-      POSTGRES_DB: test_neoris
+      POSTGRES_USER: java_user
+      POSTGRES_PASSWORD: java_password
+      POSTGRES_DB: java_test
     ports:
       - "5432:5432"
     networks:
-      - neoris-network
+      - java-network
 
 networks:
-  neoris-network:
+  java-network:
     driver: bridge

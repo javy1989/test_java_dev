@@ -10,8 +10,8 @@ spring:
         enabled: true
   datasource:
     url: jdbc:postgresql://postgres:5432/test_neoris
-    username: ${DB_USERNAME:neoris_user}
-    password: ${DB_PASSWORD:neoris_password}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     hikari:
       connection-timeout: 30000
       max-lifetime: 1800000
