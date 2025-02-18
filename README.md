@@ -6,7 +6,7 @@ This repository contains two microservices developed for the technical test:
 
 ## Project Structure
 ```
-test_java_dev/
+java_test/
 │
 ├── ms-account/         # Microservice for account management
 │   ├── src/            # Source code
@@ -92,9 +92,9 @@ These environment variables can be set to customize the deployment.
 |-----------------------|------------------------------------------|-------------------|
 | `DB_HOST`             | PostgreSQL server hostname.             | `localhost`       |
 | `DB_PORT`             | PostgreSQL server port.                 | `5432`            |
-| `DB_NAME`             | Database name.                          | `test_java`       |
-| `DB_USERNAME`         | Database username.                      | `java_test_user`     |
-| `DB_PASSWORD`         | Database password.                      | `java_test_password` |
+| `DB_NAME`             | Database name.                          | `java_test`       |
+| `DB_USERNAME`         | Database username.                      | `java_user`     |
+| `DB_PASSWORD`         | Database password.                      | `java_password` |
 
 ---
 
