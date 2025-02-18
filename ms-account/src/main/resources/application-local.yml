@@ -9,7 +9,7 @@ spring:
       repositories:
         enabled: true
   datasource:
-    url: jdbc:postgresql://localhost:5432/test_java
+    url: jdbc:postgresql://localhost:5432/java_test
     username: postgres
     password: postgres
     hikari:
